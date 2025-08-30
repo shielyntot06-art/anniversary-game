@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary!</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: #fff0f5;
+    color: #d63384;
+    margin: 0;
+    padding: 0;
+  }
+  .slide {
+    display: none;
+    padding: 50px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  .active {
+    display: block;
+  }
+  button {
+    background: #d63384;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  button:hover {
+    background: #b0266c;
+  }
+  .heart {
+    font-size: 50px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="slide active" id="slide1">
+  <h1>Hi Chingching! 💕</h1>
+  <p>Happy 1st Anniversary! I’m lucky to have you as my wife.</p>
+  <button onclick="nextSlide()">Start</button>
+</div>
+
+<div class="slide" id="slide2">
+  <h2>Click a heart to see a message!</h2>
+  <div class="heart" onclick="showMessage('You always make me smile 😘')">❤️</div>
+  <div class="heart" onclick="showMessage('Thank you for loving me 💖')">💖</div>
+  <div class="heart" onclick="showMessage('I am grateful for you every day 🥰')">💗</div>
+  <p id="message"></p>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<div class="slide" id="slide3">
+  <h2>Choose your favorite gift!</h2>
+  <button onclick="showChoice('Your love is the best gift 💕')">💌 Love</button>
+  <button onclick="showChoice('A hug from me anytime 🤗')">🤗 Hug</button>
+  <p id="choiceMessage"></p>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<div class="slide" id="slide4">
+  <h1>HAPPY ANNIVERSARY! 🥰</h1>
+  <p>I love you forever, my baby, my wife, my everything!</p>
+  <iframe width="0" height="0" src="https://www.youtube.com/embed/4KXI9yYKex0?autoplay=1&loop=1&playlist=4KXI9yYKex0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<script>
+  let currentSlide = 1;
+  function nextSlide() {
+    document.getElementById('slide' + currentSlide).classList.remove('active');
+    currentSlide++;
+    document.getElementById('slide' + currentSlide).classList.add('active');
+  }
+  function showMessage(msg) {
+    document.getElementById('message').innerText = msg;
+  }
+  function showChoice(msg) {
+    document.getElementById('choiceMessage').innerText = msg;
+  }
+</script>
+
+</body>
+</html>
